@@ -2,6 +2,9 @@
   list-style-type: none;
   text-decoration: none;
   box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -64,7 +67,6 @@ header ul li a {
 }
 .down-list li {
   position: relative;
-  padding: 10px;
 }
 .down-list li a {
   text-decoration: none;
@@ -98,7 +100,7 @@ header ul li a {
   display: none;
   position: absolute;
   width: 200px;
-  top: 3.2rem;
+  top: 1.7rem;
   background-color: white;
   border: 1px solid #ddd;
   padding: 20px;
@@ -321,6 +323,206 @@ header ul li a {
 }
 .info .questions .infos .more-info-content {
   display: none;
+}
+
+.slides-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s;
+}
+
+.slide {
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  color: #98999A;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.testimonial-container {
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.testimonial-container .testimonial-content {
+  min-height: 100px;
+  position: relative;
+}
+.testimonial-container .testimonial-content p {
+  text-align: center;
+  display: none;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  padding: 10px;
+  transition: opacity 0.5s ease;
+}
+.testimonial-container .testimonial-content p.active {
+  display: block;
+  opacity: 1;
+}
+.testimonial-container .testimonials {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 60%;
+}
+.testimonial-container .testimonials .testimonial-item {
+  margin: 0 15px;
+  cursor: pointer;
+  text-align: center;
+}
+.testimonial-container .testimonials .testimonial-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+.testimonial-container .testimonials .testimonial-item h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.testimonial-container .testimonials .testimonial-item .client {
+  font-size: 15px;
+  color: #2368A3;
+}
+.testimonial-container .testimonials .testimonial-item:hover img {
+  transform: scale(1.1);
+}
+
+.persons-info.active .slide-content {
+  display: block;
+}
+
+.photos {
+  padding-top: 30px;
+}
+.photos h2 {
+  text-align: center;
+}
+.photos .motherPhotos {
+  display: flex;
+  gap: 30px;
+}
+.photos .motherPhotos .left-img {
+  flex-direction: column;
+  gap: 30px;
+}
+.photos .motherPhotos .left-img .left-imgsAll {
+  gap: 30px;
+}
+.photos .motherPhotos .left-img .left-imgsAll .left-little-imgs {
+  flex-direction: column;
+  gap: 30px;
+}
+.photos .motherPhotos .left-img .left-imgsAll .left-little-imgs img:hover .afterImg {
+  display: block;
+}
+.photos .motherPhotos .right-imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.photos .motherPhotos .right-imgs .right-imgs-up {
+  gap: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.gallery {
+  text-align: center;
+}
+
+.gallery-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery-images img {
+  width: 93px;
+  height: 93px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.quick-links, .get-in-touch {
+  width: 250px;
+}
+
+.quick-links ul, .get-in-touch ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li, .get-in-touch li {
+  margin-bottom: 10px;
+}
+
+.quick-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.get-in-touch ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.get-in-touch li {
+  display: flex;
+  align-items: center;
+}
+
+.get-in-touch i {
+  margin-right: 10px;
+  color: #ffc107;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-media a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #222;
+  text-align: center;
+  line-height: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.social-media a:hover {
+  background-color: #ffc107;
+  color: #fff;
 }
 
 @keyframes rotateBtn {

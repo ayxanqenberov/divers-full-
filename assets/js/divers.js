@@ -2,17 +2,16 @@ const search = document.querySelector(".search")
 const modal = document.getElementsByClassName("searching")
 const statics = document.querySelectorAll(".statics")
 const moreInfo = document.querySelectorAll(".more-info")
+const slides = document.querySelector(".text-person")
+
 
 search.addEventListener("click", getSearch)
 
 function getSearch() {
-    // remove existing modal search element
     const existingModalSearch = modal[0].querySelector(".modalSearch")
     if (existingModalSearch) {
         existingModalSearch.remove()
     }
-
-    // append new modal search element
     modal[0].innerHTML += `
     <div class="modalSearch">
             <i class="closeSearch fa-regular fa-circle-xmark" onclick="getclose()"></i>
@@ -63,7 +62,7 @@ function getChange(event) {
 
 function resetChange(event) {
     event.target.style.background = "white"
-    event.target.style.color = "initial" // or any other default color
+    event.target.style.color = "initial"
 }
 
 function getMore(event) {
@@ -71,3 +70,36 @@ function getMore(event) {
     var moreInfoContent = parent.querySelector('.more-info-content');
     moreInfoContent.style.display = (moreInfoContent.style.display === 'none') ? 'block' : 'none';
 }
+
+let currentIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const testimonialItems = document.querySelectorAll('.testimonial-item');
+
+// Function to switch testimonials
+function switchTestimonial(index) {
+  testimonials.forEach((testimonial, i) => {
+    if (i === index) {
+      testimonial.classList.add('active');
+    } else {
+      testimonial.classList.remove('active');
+    }
+  });
+}
+
+// Click event for testimonial items
+testimonialItems.forEach(item => {
+  item.addEventListener('click', function() {
+    const index = parseInt(this.getAttribute('data-index'));
+    currentIndex = index;
+    switchTestimonial(currentIndex);
+  });
+});
+
+// Automatic carousel logic
+function autoCarousel() {
+  currentIndex = (currentIndex + 1) % testimonials.length;
+  switchTestimonial(currentIndex);
+}
+
+setInterval(autoCarousel, 3000);
+  
